@@ -1,5 +1,8 @@
 package testes_automatizados.capitulo_01.teste;
 
+import org.junit.Test;
+
+import junit.framework.Assert;
 import testes_automatizados.capitulo_01.Avaliador;
 import testes_automatizados.capitulo_01.model.Lance;
 import testes_automatizados.capitulo_01.model.Leilao;
@@ -8,12 +11,14 @@ import testes_automatizados.capitulo_01.model.Usuario;
 /**
  * 
  * @since 1.1 p.2
- * @version 1.3
+ * @version 1.4
  *
  */
-public class TesteDoAvaliador {
+@SuppressWarnings("deprecation")
+public class AvaliadorTest {
 
-   public static void main(String[] args) {
+   @Test
+   public void deveEntenderLancesEmOrdemCrescente() {
 
       Usuario joao = new Usuario("João");
       Usuario jose = new Usuario("José");
@@ -32,8 +37,8 @@ public class TesteDoAvaliador {
       double maiorEsperado = 400;
       double menorEsperado = 250;
 
-      System.out.println(leiloeiro.getMaiorLance() == maiorEsperado);
-      System.out.println(leiloeiro.getMenorLance() == menorEsperado);
+      Assert.assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
+      Assert.assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
 
    }
 }
