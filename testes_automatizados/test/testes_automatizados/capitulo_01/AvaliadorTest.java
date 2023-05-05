@@ -1,19 +1,12 @@
-package testes_automatizados.capitulo_01.teste;
+package testes_automatizados.capitulo_01;
 
 import org.junit.Test;
 
 import junit.framework.Assert;
-import testes_automatizados.capitulo_01.Avaliador;
 import testes_automatizados.capitulo_01.model.Lance;
 import testes_automatizados.capitulo_01.model.Leilao;
 import testes_automatizados.capitulo_01.model.Usuario;
 
-/**
- * 
- * @since 1.1 p.2
- * @version 1.4
- *
- */
 @SuppressWarnings("deprecation")
 public class AvaliadorTest {
 
@@ -41,4 +34,5 @@ public class AvaliadorTest {
       Assert.assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
 
    }
+
 }
