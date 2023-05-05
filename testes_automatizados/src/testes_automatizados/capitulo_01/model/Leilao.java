@@ -30,9 +30,7 @@ public class Leilao {
 
 	public void propor(Lance lance) {
 		getLances().add(lance);
-		
+
 	}
-	
-	
-	
+
 }

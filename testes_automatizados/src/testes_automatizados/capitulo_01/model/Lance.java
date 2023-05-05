@@ -25,6 +25,5 @@ public class Lance {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
+
 }

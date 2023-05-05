@@ -1,5 +1,9 @@
 package testes_automatizados.capitulo_01.model;
 
+/**
+ * Pessoa que fez um lance no leilao
+ *
+ */
 public class Usuario {
 
 	private String nome;
@@ -16,5 +20,4 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	
 }
