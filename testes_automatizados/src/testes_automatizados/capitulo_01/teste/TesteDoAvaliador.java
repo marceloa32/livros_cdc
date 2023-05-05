@@ -8,7 +8,7 @@ import testes_automatizados.capitulo_01.model.Usuario;
 /**
  * 
  * @since 1.1 p.2
- * @version 1.2
+ * @version 1.3
  *
  */
 public class TesteDoAvaliador {
@@ -28,10 +28,12 @@ public class TesteDoAvaliador {
 		Avaliador leiloeiro = new Avaliador();
 		leiloeiro.avaliar(leilao);
 		
-		//vai ficar ok
-		System.out.println(leiloeiro.getMaiorLance());
-		//nao vai dar certo com a nova ordem de leiloes
-		System.out.println(leiloeiro.getMenorLance());
+		//testando valores esperados
+		double maiorEsperado = 400;
+		double menorEsperado = 250;
+		
+		System.out.println(leiloeiro.getMaiorLance() == maiorEsperado);
+		System.out.println(leiloeiro.getMenorLance() == menorEsperado);
 		
 	}
 }
