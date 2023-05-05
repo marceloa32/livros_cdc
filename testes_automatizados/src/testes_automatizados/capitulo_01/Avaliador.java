@@ -11,26 +11,26 @@ import testes_automatizados.capitulo_01.model.Leilao;
  */
 public class Avaliador {
 
-	private double maiorDeTodos = Double.NEGATIVE_INFINITY;
-	private double menorDeTodos = Double.POSITIVE_INFINITY;
+   private double maiorDeTodos = Double.NEGATIVE_INFINITY;
+   private double menorDeTodos = Double.POSITIVE_INFINITY;
 
-	public void avaliar(Leilao leilao) {
+   public void avaliar(Leilao leilao) {
 
-		for (Lance lance : leilao.getLances()) {
-			if (lance.getValor() > maiorDeTodos) {
-				maiorDeTodos = lance.getValor();
-			} else if (lance.getValor() < menorDeTodos) {
-				menorDeTodos = lance.getValor();
-			}
-		}
-	}
+      for (Lance lance : leilao.getLances()) {
+         if (lance.getValor() > maiorDeTodos) {
+            maiorDeTodos = lance.getValor();
+         } else if (lance.getValor() < menorDeTodos) {
+            menorDeTodos = lance.getValor();
+         }
+      }
+   }
 
-	public double getMaiorLance() {
-		return maiorDeTodos;
-	}
+   public double getMaiorLance() {
+      return maiorDeTodos;
+   }
 
-	public double getMenorLance() {
-		return menorDeTodos;
-	}
+   public double getMenorLance() {
+      return menorDeTodos;
+   }
 
 }

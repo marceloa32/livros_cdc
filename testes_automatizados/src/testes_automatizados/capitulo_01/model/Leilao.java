@@ -9,28 +9,28 @@ import java.util.List;
  */
 public class Leilao {
 
-	private List<Lance> lances = new ArrayList<>();
-	private String titulo;
+   private List<Lance> lances = new ArrayList<>();
+   private String titulo;
 
-	public Leilao(String titulo) {
-		this.setTitulo(titulo);
-	}
+   public Leilao(String titulo) {
+      this.setTitulo(titulo);
+   }
 
-	public List<Lance> getLances() {
-		return lances;
-	}
+   public List<Lance> getLances() {
+      return lances;
+   }
 
-	public String getTitulo() {
-		return titulo;
-	}
+   public String getTitulo() {
+      return titulo;
+   }
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
+   public void setTitulo(String titulo) {
+      this.titulo = titulo;
+   }
 
-	public void propor(Lance lance) {
-		getLances().add(lance);
+   public void propor(Lance lance) {
+      getLances().add(lance);
 
-	}
+   }
 
 }
