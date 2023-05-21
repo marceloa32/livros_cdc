@@ -60,7 +60,7 @@ public class Avaliador {
          }
       });
       
-      maiores = maiores.subList(0, 3);
+      maiores = maiores.subList(0, maiores.size() > 3 ? 3 : maiores.size());
    }
    
    public List<Lance> getTresMaiores(){
