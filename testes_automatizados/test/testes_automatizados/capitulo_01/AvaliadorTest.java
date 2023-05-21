@@ -3,6 +3,9 @@ package testes_automatizados.capitulo_01;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+
+import java.util.List;
+
 import testes_automatizados.capitulo_01.model.Lance;
 import testes_automatizados.capitulo_01.model.Leilao;
 import testes_automatizados.capitulo_01.model.Usuario;
@@ -16,6 +19,9 @@ import testes_automatizados.capitulo_01.model.Usuario;
 @SuppressWarnings("deprecation")
 public class AvaliadorTest {
 
+   /**
+    * 1.4 p.11
+    */
    @Test
    public void deveEntenderLancesEmOrdemCrescente() {
 
@@ -41,6 +47,9 @@ public class AvaliadorTest {
 
    }
    
+   /**
+    * 1.7 p.18
+    */
    @Test
    public void deveEntenderLancesEmOrdemCrescenteComOutrosValores() {
 
@@ -61,6 +70,9 @@ public class AvaliadorTest {
       assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
    }
 
+   /**
+    *1.8 p.20 
+    */
    @Test
    public void deveEntenderLeilaoComApenasUmLance() {
       
@@ -76,5 +88,31 @@ public class AvaliadorTest {
       assertEquals(1000, leiloeiro.getMaiorLance(), 0.0001);
       assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
    }
+   
+   /**
+    * 1.10 p.23
+    */
+   @Test
+   public void deveEncontrarOsTresMaioresLances() {
+      
+      Usuario joao = new Usuario("João");
+      Usuario maria = new Usuario("Maria");
+      
+      Leilao leilao = new Leilao("Playstation 3 Novo");
+      
+      leilao.propor(new Lance(joao, 100.0));
+      leilao.propor(new Lance(maria, 200.0));
+      leilao.propor(new Lance(joao, 300.0));
+      leilao.propor(new Lance(maria, 400.0));
+      
+      Avaliador leiloeiro = new Avaliador();
+      leiloeiro.avaliar(leilao);
+      
+      List<Lance> maiores = leiloeiro.getTresMaiores();
+      
+      assertEquals(3, maiores.size());
+   }
+   
+   
 
 }
