@@ -2,7 +2,7 @@ package testes_automatizados.capitulo_01;
 
 import org.junit.Test;
 
-import junit.framework.Assert;
+import static junit.framework.Assert.assertEquals;
 import testes_automatizados.capitulo_01.model.Lance;
 import testes_automatizados.capitulo_01.model.Leilao;
 import testes_automatizados.capitulo_01.model.Usuario;
@@ -36,8 +36,8 @@ public class AvaliadorTest {
       double maiorEsperado = 400;
       double menorEsperado = 250;
 
-      Assert.assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
-      Assert.assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
+      assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
+      assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
 
    }
    
@@ -57,8 +57,8 @@ public class AvaliadorTest {
       Avaliador leiloeiro = new Avaliador();
       leiloeiro.avaliar(leilao);
 
-      Assert.assertEquals(3000, leiloeiro.getMaiorLance(), 0.0001);
-      Assert.assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
+      assertEquals(3000, leiloeiro.getMaiorLance(), 0.0001);
+      assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
    }
 
    @Test
@@ -73,8 +73,8 @@ public class AvaliadorTest {
       Avaliador leiloeiro = new Avaliador();
       leiloeiro.avaliar(leilao);
       
-      Assert.assertEquals(1000, leiloeiro.getMaiorLance(), 0.0001);
-      Assert.assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
+      assertEquals(1000, leiloeiro.getMaiorLance(), 0.0001);
+      assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
    }
 
 }
