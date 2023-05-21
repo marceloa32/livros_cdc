@@ -10,7 +10,7 @@ import testes_automatizados.capitulo_01.model.Usuario;
 /**
  * 
  * @since 1.1
- * @version 1.7
+ * @version 1.8
  *
  */
 @SuppressWarnings("deprecation")
@@ -58,6 +58,22 @@ public class AvaliadorTest {
       leiloeiro.avaliar(leilao);
 
       Assert.assertEquals(3000, leiloeiro.getMaiorLance(), 0.0001);
+      Assert.assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
+   }
+
+   @Test
+   public void deveEntenderLeilaoComApenasUmLance() {
+      
+      Usuario joao = new Usuario("João");
+      
+      Leilao leilao = new Leilao("Playstation 3 Novo");
+      
+      leilao.propor(new Lance(joao, 1000.0));
+      
+      Avaliador leiloeiro = new Avaliador();
+      leiloeiro.avaliar(leilao);
+      
+      Assert.assertEquals(1000, leiloeiro.getMaiorLance(), 0.0001);
       Assert.assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
    }
 
