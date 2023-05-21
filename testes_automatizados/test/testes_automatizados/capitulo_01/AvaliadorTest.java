@@ -7,6 +7,12 @@ import testes_automatizados.capitulo_01.model.Lance;
 import testes_automatizados.capitulo_01.model.Leilao;
 import testes_automatizados.capitulo_01.model.Usuario;
 
+/**
+ * 
+ * @since 1.1
+ * @version 1.7
+ *
+ */
 @SuppressWarnings("deprecation")
 public class AvaliadorTest {
 
@@ -33,6 +39,26 @@ public class AvaliadorTest {
       Assert.assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
       Assert.assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
 
+   }
+   
+   @Test
+   public void deveEntenderLancesEmOrdemCrescenteComOutrosValores() {
+
+      Usuario joao = new Usuario("João");
+      Usuario jose = new Usuario("José");
+      Usuario maria = new Usuario("Maria");
+
+      Leilao leilao = new Leilao("Playstation 3 Novo");
+
+      leilao.propor(new Lance(maria, 1000.0));
+      leilao.propor(new Lance(joao, 2000.0));
+      leilao.propor(new Lance(jose, 3000.0));
+
+      Avaliador leiloeiro = new Avaliador();
+      leiloeiro.avaliar(leilao);
+
+      Assert.assertEquals(3000, leiloeiro.getMaiorLance(), 0.0001);
+      Assert.assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
    }
 
 }
